@@ -1,0 +1,9 @@
+{
+  "name": "Previewer",
+  "description": "preview for CoCo DoJo",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "socket.io": "~0.9"
+  }
+}

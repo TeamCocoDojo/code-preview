@@ -1,5 +1,6 @@
 var
-  app = require('express'),
+  express = require('express'),
+  app = express(),
   http = require('http'),
   server = http.createServer(app)
   io = require('socket.io').listen(server),
@@ -8,6 +9,10 @@ var
   exec = require('child_process').exec;
 
 server.listen(3333);
+
+app.configure(function(){
+  app.use(express.static(__dirname + '/sessions'));
+});
 
 function puts(error, stdout, stderr) { sys.puts(stdout) }
 
@@ -30,5 +35,3 @@ io.sockets.on('connection', function (socket) {
   });
 
 });
-
-
